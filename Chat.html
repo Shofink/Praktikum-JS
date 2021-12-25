@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas chat | shofi</title>
+    <style>
+        body {
+            width : 700px;
+            min-height: 450px;
+            border: 1px solid black;
+            margin: auto;
+            box-sizing: border-box;
+            position:relative;
+            margin-top: 50px;
+        }
+        #pesan {
+            position: absolute;
+            bottom: 0;
+            width: 689px;
+            height: 100px;
+        }
+        button {
+            position: absolute;
+            width: 65px;
+            height: 106px;
+            bottom: 0px;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="hasil"></h2>
+    <input type="text" id="pesan" onchange="kirim()">
+    <button onclick="kirim()">Kirim Pesan</button>
+
+    <script>
+        let masukan = document.getElementById("pesan")
+        let hasil = document.getElementById("hasil")
+        let penampung = ""
+
+        function kirim() {
+            penampung += masukan.value + "<br>"
+            hasil.innerHTML = penampung
+            masukan.value = ""
+        }
+    </script>
+</body>
+</html>
